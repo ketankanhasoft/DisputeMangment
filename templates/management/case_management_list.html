@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="case-list" hx-get="{% url 'case_management_list' %}">
+
+    <h1>Case Management</h1>
+    {% for case in cases %}
+    <div class="case-item">
+        <p>{{ case.reason }}</p>
+        <p>Status: {{ case.get_status_display }}</p>
+    </div>
+    {% empty %}
+    <p>No cases available.</p>
+    {% endfor %}
+    <button id="show-form" hx-get="{% url 'create_case' %}" hx-target="#case-list" hx-swap="outerHTML">Create
+        Case</button>
+
+</div>
+
+
+{% endblock %}

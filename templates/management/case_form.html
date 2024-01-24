@@ -1,0 +1,12 @@
+<div id="case-form" hx-target="#case-form" hx-swap="outerHTML">
+
+    <h1>Create case</h1>
+    <form hx-post="{% url 'create_case' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Case</button>
+    </form>
+    <button id="back-to-list" hx-get="{% url 'case_management_list' %}" hx-target="#case-form" hx-swap="outerHTML">Back
+        to
+        List</button>
+</div>
