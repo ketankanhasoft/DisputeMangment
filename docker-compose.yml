@@ -17,7 +17,7 @@ services:
       POSTGRES_USER: amazon
       POSTGRES_PASSWORD: y2QQvO_ISGr@A
     ports:
-      - 5432:5432
+      - 5434:5432
     networks:
       - amazon_network
 
